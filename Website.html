@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Zevan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #3498db;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+        }
+
+        header h1 {
+            font-size: 22px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #e67e22;
+        }
+
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+            color: white;
+        }
+
+        .home img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .home img:hover {
+            transform: scale(1.1);
+        }
+
+        .home h2 {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .home p {
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #3498db;
+            font-size: 26px;
+        }
+
+        /* Biodata */
+        .biodata table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        .biodata th,
+        .biodata td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .biodata th {
+            width: 30%;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills .skill {
+            width: 80%;
+            margin: 15px auto;
+        }
+
+        .skill p {
+            margin-bottom: 5px;
+        }
+
+        .bar {
+            width: 100%;
+            background: #eee;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .bar div {
+            height: 20px;
+            background: #3498db;
+            text-align: right;
+            padding-right: 10px;
+            color: white;
+            line-height: 20px;
+        }
+
+        /* Education */
+        .timeline {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #3498db;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+            border: 3px solid #fff;
+        }
+
+        .timeline-item.left::after {
+            right: -10px;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        /* Quotes */
+        .quotes {
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .quotes p {
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact form {
+            width: 80%;
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact input,
+        .contact textarea {
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .contact button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .contact button:hover {
+            background: #e67e22;
+        }
+
+        footer {
+            text-align: center;
+            background: #3498db;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Zevan Surbakti</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#biodata">Biodata</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Pendidikan</a>
+            <a href="#quotes">Motivasi</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <img src="foto.jpg" alt="Foto Profil">
+        <h2>Halo, Saya Zevan Irfandi Surbakti</h2>
+        <p>"Mahasiswa & Programmer Pemula yang terus belajar untuk berkembang."</p>
+    </section>
+
+    <section class="biodata" id="biodata">
+        <h2 class="section-title">Biodata Diri</h2>
+        <table>
+            <tr>
+                <th>Nama Lengkap</th>
+                <td>Zevan Irfandi Surbakti</td>
+            </tr>
+            <tr>
+                <th>TTL</th>
+                <td>Medan, 02 Februari 2006</td>
+            </tr>
+            <tr>
+                <th>Alamat</th>
+                <td>Jl. Tuasan, Medan</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>zevanirfandisurbakti@gmail.com</td>
+            </tr>
+            <tr>
+                <th>No HP</th>
+                <td>+62 81362086418</td>
+            </tr>
+            <tr>
+                <th>Hobi</th>
+                <td>Badminton, Biliard, Bermain Game</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">Keahlian</h2>
+        <div class="skill">
+            <p>HTML</p>
+            <div class="bar">
+                <div style="width:85%;">85%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>CSS</p>
+            <div class="bar">
+                <div style="width:70%;">70%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>JavaScript</p>
+            <div class="bar">
+                <div style="width:50%;">50%</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <h2 class="section-title">Riwayat Pendidikan</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <h3>SD</h3>
+                <p>SD Negeri 163080 Tebing Tinggi (2012-2018)</p>
+            </div>
+            <div class="timeline-item right">
+                <h3>SMP</h3>
+                <p>SMP Negeri 4 Tebing Tinggi (2018-2021)</p>
+            </div>
+            <div class="timeline-item left">
+                <h3>SMA</h3>
+                <p>SMA Negeri 4 Tebing Tinggi (2021-2024)</p>
+            </div>
+            <div class="timeline-item right">
+                <h3>Kuliah</h3>
+                <p>Universitas Negeri Medan (2024-Sekarang)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes" id="quotes">
+        <h2 class="section-title">Motivasi</h2>
+        <p>"Jangan berhenti belajar, karena hidup tidak pernah berhenti mengajarkan."</p>
+        <p>"Kegagalan adalah bagian dari perjalanan menuju kesuksesan."</p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Kontak Saya</h2>
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Nama" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="5" placeholder="Pesan" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 | Dibuat dengan oleh Zevan
+    </footer>
+
+    <script>
+        function sendMessage(e) {
+            e.preventDefault();
+            alert("Pesan berhasil dikirim! Terima kasih 🙌");
+        }
+    </script>
+</body>
+
+</html>
